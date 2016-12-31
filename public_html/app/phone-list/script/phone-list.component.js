@@ -4,15 +4,9 @@
  * and open the template in the editor.
  */
 
-angular.module('phonecatApp').
+angular.module('phoneList').
         component('phoneList', {
-            template:
-                    '<ul>' +
-                    '<li ng-repeat="phone in $ctrl.phones">' +
-                    '<span>{{phone.name}}</span>' +
-                    '<p>{{phone.snippet}}</p>' +
-                    '</li>' +
-                    '</ul>'+ '<p>Total number of phones: {{$ctrl.phones.length}}</p>',
+            templateUrl:'phone-list/view/phone-list.html',   
             controller: function PhoneListController() {
                 this.phones = [
                     {
