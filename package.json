@@ -1,0 +1,17 @@
+{
+    "name": "angular-phonecat",
+    "version": "1.0.0",
+    "keywords": [
+        "util",
+        "functional",
+        "server",
+        "client",
+        "browser"
+    ],
+    "author": "choura",
+    "contributors": [
+    ],
+    "dependencies": {
+        "bower": "^1.7.7"
+    }
+}
