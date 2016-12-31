@@ -4,4 +4,4 @@
  * and open the template in the editor.
  */
 
-angular.module('core', []);
+angular.module('core', ['core.phone']);

@@ -3,5 +3,5 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-angular.module('phoneList',['core.phone']);
 
+angular.module('core.phone', ['ngResource']);
