@@ -3,5 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-angular.module('phonecatApp',['phoneList', 'ngRoute',,'core','phoneDetail']);
 
+angular.module('core').
+        filter('checkmark', function () {
+            return function (input) {
+                return input ? '\u2713' : '\u2718';
+            };
+        });
