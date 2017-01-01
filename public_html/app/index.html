@@ -2,12 +2,18 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>Phone Cat App</title>
-        <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css" />
-        <link rel="stylesheet" href="app.css" />
+        <title>Phone Cat Application</title>
+
+        <!-- build:[src] lib/ -->
         <script src="../bower_components/angular/angular.js"></script>
         <script src="../bower_components/angular-route/angular-route.js"></script>
         <script src="../bower_components/angular-resource/angular-resource.js"></script>
+        <!-- /build -->
+        <!-- build:[href] bootstrap/css/ -->
+        <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css" />
+        <!-- /build -->
+        <link rel="stylesheet" href="app.css" />
+        <!-- build:js app.js -->
         <script src="app.module.js"></script>
         <script src="app.config.js"></script>
         <script src="core/phone/phone.module.js"></script>
@@ -18,6 +24,7 @@
         <script src="phone-list/script/phone-list.component.js"></script>
         <script src="phone-detail/script/phone-detail.module.js"></script>
         <script src="phone-detail/script/phone-detail.component.js"></script>
+        <!-- /build -->
 
     </head>
 
