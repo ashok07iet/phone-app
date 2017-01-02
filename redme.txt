@@ -1,14 +1,15 @@
 - Bootstrapping
 1 - Static Template
-2 - Angular Templates
-3 - Components
-4 - Directory and File Organization
-5 - Filtering Repeaters
-6 - Two-way Data Binding
-7 - XHR & Dependency Injection
-8 - Templating Links & Images
-9 - Routing & Multiple Views
-10 - More Templating
-11 - Custom Filters
-12 - Event Handlers
-13 - REST and Custom Services
+2 - Angular Templates(add-controller)
+3 - Components(add-component-1)
+4 - Directory and File Organization(organise-directory)
+5 - Filtering Repeaters(add-filter )
+6 - Two-way Data Binding(two-way-data-binding)
+7 - XHR & Dependency Injection(adding-xhr)
+8 - Templating Links & Images(adding-image)
+9 - Routing & Multiple Views(routing)
+10 - More Templating(more-template)
+11 - Custom Filters(custom-filter )
+12 - Event Handlers(add-event-handler )
+13 - REST and Custom Services(custom-service)
+14 -add grunt task(adding-grunt-task)
