@@ -87,4 +87,5 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.registerTask('default', ['clean','concat','copy', 'processhtml','connect']);
      grunt.registerTask('build', ['clean','concat','copy', 'processhtml']);
+      grunt.registerTask('build1', ['clean','concat','copy']);
 };

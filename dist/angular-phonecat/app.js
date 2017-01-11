@@ -35,15 +35,22 @@ angular.module('core').
 
 angular.
   module('core.phone').
-  factory('Phone', ['$resource',
-    function($resource) {
-      return $resource('phones/:phoneId.json', {}, {
-        query: {
-          method: 'GET',
-          params: {phoneId: 'phones'},
-          isArray: true
-        }
-      });
+  factory('PhoneService', ['$http',
+    function($http) {
+        return {
+           getPhoneList:function(){
+               return $http({
+                method: 'Get',
+                url: '/angular-phonecat/app/phones/phones.json'
+            });
+           },
+           getPhoneDetail:function(phoneId){
+              return $http({
+                method: 'Get',
+                url: '/angular-phonecat/app/phones/'+phoneId+'.json'
+            }); 
+           }
+        };
     }
   ]);
 
@@ -51,29 +58,38 @@ angular.
         module('phoneDetail').
         component('phoneDetail', {
             templateUrl: 'phone-detail/view/phone-detail.html',
-            controller: ['$routeParams', 'Phone',
-                function PhoneDetailController($routeParams, Phone) {
-                    var self = this;
-                    self.phone = Phone.get({phoneId: $routeParams.phoneId}, function (phone) {
-                        self.setImage(phone.images[0]);
-                    });
-
-                    self.setImage = function setImage(imageUrl) {
-                        self.mainImageUrl = imageUrl;
-                    };
-                }
-            ]
+            controller: 'PhoneDetailController'
         });
+
+
+angular.module('phoneDetail').controller('PhoneDetailController', ['$routeParams', 'PhoneService',
+    function ($routeParams, PhoneService) {
+        var self = this;
+        PhoneService.getPhoneDetail($routeParams.phoneId).then(function (phone) {
+            self.phone = phone.data;
+            self.setImage(self.phone.images[0]);
+        });
+        self.setImage = function setImage(imageUrl) {
+            self.mainImageUrl = imageUrl;
+        };
+    }
+]);
 
 
 angular.
         module('phoneList').
         component('phoneList', {
             templateUrl: 'phone-list/view/phone-list.html',
-            controller: ['Phone',
-                function PhoneListController(Phone) {
-                    this.phones = Phone.query();
-                    this.orderProp = 'age';
-                }
-            ]
+            controller: 'PhoneListController'
         });
+
+angular.module('phoneList').controller('PhoneListController',['PhoneService',
+                function (PhoneService) {
+                    var self=this;
+                    PhoneService.getPhoneList().then(function(phones){
+                        self.phones=phones.data;
+                    });
+                    self.orderProp = 'age';
+                }
+            ]);
+

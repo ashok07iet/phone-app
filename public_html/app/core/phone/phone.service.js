@@ -6,14 +6,21 @@
 
 angular.
   module('core.phone').
-  factory('Phone', ['$resource',
-    function($resource) {
-      return $resource('phones/:phoneId.json', {}, {
-        query: {
-          method: 'GET',
-          params: {phoneId: 'phones'},
-          isArray: true
-        }
-      });
+  factory('PhoneService', ['$http',
+    function($http) {
+        return {
+           getPhoneList:function(){
+               return $http({
+                method: 'Get',
+                url: '/angular-phonecat/app/phones/phones.json'
+            });
+           },
+           getPhoneDetail:function(phoneId){
+              return $http({
+                method: 'Get',
+                url: '/angular-phonecat/app/phones/'+phoneId+'.json'
+            }); 
+           }
+        };
     }
   ]);
