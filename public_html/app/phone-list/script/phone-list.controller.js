@@ -7,7 +7,7 @@ angular.module('phoneList').controller('PhoneListController',['PhoneService',
                 function (PhoneService) {
                     var self=this;
                     PhoneService.getPhoneList().then(function(phones){
-                        self.phones=phones.data;
+                        self.phones=phones.data; 
                     });
                     self.orderProp = 'age';
                 }
