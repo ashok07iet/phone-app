@@ -12,13 +12,13 @@ angular.
            getPhoneList:function(){
                return $http({
                 method: 'Get',
-                url: '/angular-phonecat/app/phones/phones.json'
+                url: '/phones/phones.json'
             });
            },
            getPhoneDetail:function(phoneId){
               return $http({
                 method: 'Get',
-                url: '/angular-phonecat/app/phones/'+phoneId+'.json'
+                url: '/phones/'+phoneId+'.json'
             }); 
            }
         };
